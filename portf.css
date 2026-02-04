@@ -70,4 +70,33 @@ header a {
 }
 .btn-projet:hover{
     background: #1c5982;
+
+}
+/* 1. On s'assure que les images ne dépassent jamais */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 2. On rend la grille de projets intelligente */
+.projet-grid {
+    display: grid;
+    /* "auto-fit" va ranger les cartes sur une ligne s'il y a de la place, 
+       sinon il les mettra l'une sous l'autre automatiquement */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 15px;
+}
+
+/* 3. On enlève les largeurs fixes sur le header ou les sections */
+section {
+    width: 100%;
+    padding: 40px 20px; /* Plus de padding sur les côtés pour respirer */
+}
+@media (max-width: 600px) {
+    header ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
 }
